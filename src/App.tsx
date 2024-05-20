@@ -8,6 +8,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Cadastro from "./pages/cadastro/Cadastro";
 import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRouter from "./helper/ProtectedRouter";
 
 function App() {
   return (
@@ -17,7 +18,14 @@ function App() {
           <div className="flex min-h-screen flex-col bg-indigo-900">
             <Header />
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route
+                path="/"
+                element={
+                  <ProtectedRouter>
+                    <Home />
+                  </ProtectedRouter>
+                }
+              />
               <Route path="/login" element={<Login />} />
               <Route path="/cadastro" element={<Cadastro />} />
               <Route path="*" element={<NotFound />} />
