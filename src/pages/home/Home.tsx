@@ -1,6 +1,7 @@
 import { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -25,9 +26,7 @@ export default function Home() {
             Expresse aqui seus pensamentos e opiniões
           </p>
           <div className="flex justify-around gap-4">
-            <button className="rounded border-2 border-solid border-white px-4 py-2 font-bold  text-white transition-colors hover:bg-white hover:text-indigo-900 focus-visible:bg-white focus-visible:text-indigo-900">
-              Nova Postagem
-            </button>
+            <ModalPostagem />
           </div>
         </div>
 
