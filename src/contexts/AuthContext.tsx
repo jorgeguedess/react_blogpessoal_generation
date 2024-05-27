@@ -21,7 +21,7 @@ export function AuthProvider({ children }: AuthProvidersProps) {
     nome: "",
     usuario: "",
     senha: "",
-    foto: "",
+    foto: "https://i.imgur.com/Sk5SjWE.jpg",
     administrador: false,
     token: "",
   });
