@@ -40,7 +40,7 @@ export const ListaTemas = () => {
   }, [temas.length]);
 
   return (
-    <>
+    <div className="flex-1 bg-white py-12 md:py-16">
       {temas.length === 0 && (
         <DNA
           visible={true}
@@ -52,19 +52,17 @@ export const ListaTemas = () => {
         />
       )}
 
-      <div className="flex-1 bg-white py-12 md:py-16">
-        <div className="my-4 flex w-full justify-center">
-          <div className="container flex flex-col">
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {temas.map((tema) => (
-                <>
-                  <CardTemas key={tema.id} tema={tema} />
-                </>
-              ))}
-            </div>
+      <div className="my-4 flex w-full justify-center">
+        <div className="container flex flex-col">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {temas.map((tema) => (
+              <>
+                <CardTemas key={tema.id} tema={tema} />
+              </>
+            ))}
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };

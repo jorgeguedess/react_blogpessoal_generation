@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import Usuario from "../../models/Usuario";
 import { useNavigate } from "react-router-dom";
+import Usuario from "../../models/Usuario";
 import { cadastrarUsuario } from "../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 
@@ -63,7 +63,7 @@ export default function Cadastro() {
 
   return (
     <div className="grid h-screen w-full flex-1 grid-cols-1 place-items-center bg-white font-bold lg:grid-cols-2">
-      <div className="hidden min-h-screen w-full bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] bg-cover bg-no-repeat object-center lg:block"></div>
+      <div className="hidden min-h-screen w-full bg-[url('https://i.imgur.com/ZZFAmzo.jpg')] bg-cover bg-center bg-no-repeat lg:block"></div>
       <form
         className="container flex w-full max-w-[520px] flex-col items-center justify-center gap-3 md:w-2/3 md:max-w-full"
         onSubmit={cadastrarNovoUsuario}
