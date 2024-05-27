@@ -5,6 +5,7 @@ import Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { Container } from "../../container/Container";
 
 export const FormTema = () => {
   const navigate = useNavigate();
@@ -93,10 +94,8 @@ export const FormTema = () => {
     retornar();
   }
 
-  console.log(JSON.stringify(tema));
-
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       <div className="container mx-auto flex flex-col items-center justify-center">
         <h1 className="my-8 text-center text-4xl">
           {id === undefined ? "Cadastrar Tema" : "Editar Tema"}
@@ -135,6 +134,6 @@ export const FormTema = () => {
           </button>
         </form>
       </div>
-    </div>
+    </Container>
   );
 };

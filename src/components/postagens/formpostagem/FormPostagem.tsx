@@ -6,6 +6,7 @@ import Postagem from "../../../models/Postagem";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
+import { Container } from "../../container/Container";
 
 export const FormPostagem = () => {
   const navigate = useNavigate();
@@ -125,7 +126,7 @@ export const FormPostagem = () => {
   const carregandoTema = tema.descricao === "";
 
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       <div className="container mx-auto flex flex-col items-center">
         <h1 className="my-8 text-center text-4xl">
           {id !== undefined ? "Editar Postagem" : "Cadastrar Postagem"}
@@ -202,6 +203,6 @@ export const FormPostagem = () => {
           </button>
         </form>
       </div>
-    </div>
+    </Container>
   );
 };

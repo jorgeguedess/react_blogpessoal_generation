@@ -6,6 +6,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar, deletar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { Container } from "../../container/Container";
 
 export const DeletarPostagem = () => {
   const navigate = useNavigate();
@@ -75,7 +76,7 @@ export const DeletarPostagem = () => {
   }
 
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       <div className="container mx-auto w-1/3">
         <h1 className="my-4 text-center text-4xl">Deletar Postagem</h1>
 
@@ -118,6 +119,6 @@ export const DeletarPostagem = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };

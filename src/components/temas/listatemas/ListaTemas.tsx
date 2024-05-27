@@ -6,6 +6,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import Tema from "../../../models/Tema";
 import { DNA } from "react-loader-spinner";
+import { Container } from "../../container/Container";
 
 export const ListaTemas = () => {
   const navigate = useNavigate();
@@ -40,7 +41,7 @@ export const ListaTemas = () => {
   }, [temas.length]);
 
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       {temas.length === 0 && (
         <DNA
           visible={true}
@@ -63,6 +64,6 @@ export const ListaTemas = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };

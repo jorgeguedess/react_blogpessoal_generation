@@ -7,6 +7,7 @@ import Postagem from "../../../models/Postagem";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { buscar } from "../../../services/Service";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
+import { Container } from "../../container/Container";
 
 export const ListaPostagens = () => {
   const navigate = useNavigate();
@@ -41,7 +42,7 @@ export const ListaPostagens = () => {
   }, [postagens.length]);
 
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       {postagens.length === 0 && (
         <DNA
           visible={true}
@@ -60,6 +61,6 @@ export const ListaPostagens = () => {
           <CardPostagens key={postagem.id} postagem={postagem} />
         ))}
       </div>
-    </div>
+    </Container>
   );
 };

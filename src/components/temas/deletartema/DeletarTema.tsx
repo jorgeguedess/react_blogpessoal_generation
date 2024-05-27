@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import Tema from "../../../models/Tema";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { RotatingLines } from "react-loader-spinner";
+import { Container } from "../../container/Container";
 
 export const DeletarTema = () => {
   const navigate = useNavigate();
@@ -70,7 +71,7 @@ export const DeletarTema = () => {
   }
 
   return (
-    <div className="flex-1 bg-white py-12 md:py-16">
+    <Container>
       <div className="container mx-auto w-1/3">
         <h1 className="my-4 text-center text-4xl">Deletar tema</h1>
 
@@ -109,6 +110,6 @@ export const DeletarTema = () => {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 };
