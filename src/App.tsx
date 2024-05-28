@@ -16,10 +16,13 @@ import { ListaPostagens } from "./components/postagens/listapostagens/ListaPosta
 import { FormPostagem } from "./components/postagens/formpostagem/FormPostagem";
 import { DeletarPostagem } from "./components/postagens/deletarpostagem/DeletarPostagem";
 import Perfil from "./pages/perfil/Perfil";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
     <AuthProvider>
+      <ToastContainer />
+
       <BrowserRouter>
         <div className="flex min-h-screen flex-col bg-indigo-900">
           <Header />

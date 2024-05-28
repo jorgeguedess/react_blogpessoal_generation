@@ -1,25 +1,12 @@
-import { useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
+import { ListaPostagens } from "../../components/postagens/listapostagens/ListaPostagens";
 import ModalPostagem from "../../components/postagens/modalpostagem/ModalPostagem";
 
 export default function Home() {
-  const navigate = useNavigate();
-  const { usuario } = useContext(AuthContext);
-  const token = usuario.token;
-
-  useEffect(() => {
-    if (token === "") {
-      alert("Você precisa estar logado");
-      navigate("/login");
-    }
-  }, [token]);
-
   return (
-    <main className="flex flex-1 justify-center bg-indigo-900 px-2 py-12 text-white md:py-16">
-      <div className="container grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+    <main className="flex flex-1 flex-col justify-center bg-indigo-900 py-4 text-white md:py-6">
+      <div className="container grid grid-cols-1 items-center gap-8 px-2 md:grid-cols-2 ">
         <div className="flex flex-col items-center justify-center gap-4">
-          <h2 className="text-2xl font-bold md:text-3xl lg:text-4xl">
+          <h2 className="text-2xl font-bold md:text-3xl lg:text-5xl">
             Seja Bem Vinde!
           </h2>
           <p className="text-base lg:text-xl">
@@ -38,6 +25,8 @@ export default function Home() {
           />
         </div>
       </div>
+
+      <ListaPostagens />
     </main>
   );
 }

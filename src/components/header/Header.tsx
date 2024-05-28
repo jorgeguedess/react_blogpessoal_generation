@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { List, X } from "@phosphor-icons/react";
 import { links } from "../../data/linksMenu";
 import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 export const Header = () => {
   const navigate = useNavigate();
@@ -21,7 +22,8 @@ export const Header = () => {
   function logout() {
     handleCloseMenu();
     handleLogout();
-    alert("O Usuário foi desconectado com sucesso!");
+    ToastAlerta("O Usuário foi desconectado com sucesso!", "info");
+
     navigate("/login");
   }
 

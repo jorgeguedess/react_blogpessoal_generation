@@ -7,6 +7,7 @@ import { AuthContext } from "../../../contexts/AuthContext";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { Container } from "../../container/Container";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 export const FormPostagem = () => {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ export const FormPostagem = () => {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado");
+      ToastAlerta("O Usuário foi desconectado com sucesso!", "info");
       navigate("/");
     }
   }, [token]);
@@ -93,12 +94,12 @@ export const FormPostagem = () => {
           },
         });
 
-        alert("Postagem atualizada com sucesso");
+        ToastAlerta("Postagem atualizada com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
           handleLogout();
         } else {
-          alert("Erro ao atualizar a Postagem");
+          ToastAlerta("Erro ao atualizar a Postagem", "erro");
         }
       }
     } else {
@@ -109,12 +110,12 @@ export const FormPostagem = () => {
           },
         });
 
-        alert("Postagem cadastrada com sucesso");
+        ToastAlerta("Postagem cadastrada com sucesso", "sucesso");
       } catch (error: any) {
         if (error.toString().includes("403")) {
           handleLogout();
         } else {
-          alert("Erro ao cadastrar a Postagem");
+          ToastAlerta("Erro ao cadastrar a Postagem", "erro");
         }
       }
     }

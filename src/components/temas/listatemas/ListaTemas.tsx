@@ -7,6 +7,7 @@ import { buscar } from "../../../services/Service";
 import Tema from "../../../models/Tema";
 import { DNA } from "react-loader-spinner";
 import { Container } from "../../container/Container";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 export const ListaTemas = () => {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export const ListaTemas = () => {
       });
     } catch (error: any) {
       if (error.toString().includes("401")) {
-        alert("O token expirou!");
+        ToastAlerta("O token Expirou!", "erro");
         handleLogout();
       }
     }
@@ -31,7 +32,7 @@ export const ListaTemas = () => {
 
   useEffect(() => {
     if (token === "") {
-      alert("Você precisa estar logado!");
+      ToastAlerta("Você precisa estar logado!", "erro");
       navigate("/");
     }
   }, [token]);

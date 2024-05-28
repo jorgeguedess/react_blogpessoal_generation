@@ -55,7 +55,7 @@ export const ListaPostagens = () => {
       )}
       <div
         className="container mx-auto my-4 
-        grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3"
+        grid grid-cols-1 gap-4 text-black md:grid-cols-2 lg:grid-cols-3"
       >
         {postagens.map((postagem) => (
           <CardPostagens key={postagem.id} postagem={postagem} />
